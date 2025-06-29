@@ -1,0 +1,23 @@
+@model ASPNET_MVC_Internship.Models.Product
+
+<h2>Edit Product</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+
+    @Html.HiddenFor(model => model.Id)
+
+    <div>
+        @Html.LabelFor(model => model.Name)
+        @Html.EditorFor(model => model.Name)
+        @Html.ValidationMessageFor(model => model.Name)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.Price)
+        @Html.EditorFor(model => model.Price)
+        @Html.ValidationMessageFor(model => model.Price)
+    </div>
+    <button type="submit">Save</button>
+    | @Html.ActionLink("Back to List", "Index")
+}

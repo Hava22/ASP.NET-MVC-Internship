@@ -1,0 +1,15 @@
+@model ASPNET_MVC_Internship.Models.Product
+
+<h2>Product Details</h2>
+
+<div>
+    <strong>Name:</strong> @Model.Name
+</div>
+<div>
+    <strong>Price:</strong> @Model.Price.ToString("C")
+</div>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
